@@ -35,5 +35,5 @@ All posts are written using [Vim][10] with some plugins. My Vim configuration ca
 [7]: https://wordpress.org/news/category/releases/
 [8]: https://letsencrypt.org/
 [9]: https://www.ssllabs.com/ssltest/analyze.html?d=www.vbrandl.net
-[10]: http://vim.org/
+[10]: http://www.vim.org/
 [11]: https://github.com/vbrandl/dotfiles/tree/master/editors/vim/
