@@ -5,7 +5,7 @@ title = "Hello World"
 description = "First post explaining the how and why of this website"
 tags = ["hugo","nginx","tls","vim"]
 categories = ["blogging"]
-draft = true
+draft = false
 
 +++
 
