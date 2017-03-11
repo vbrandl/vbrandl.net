@@ -1,0 +1,35 @@
+baseurl = "https://www.vbrandl.net" # Controls base URL
+languageCode = "en" # Controls html lang attribute
+title = "Valentin Brandl" # Homepage title and page title suffix
+paginate = 5 # Number of posts to show before paginating
+
+theme = "after-dark" # Uncomment to use as default theme
+
+enableRobotsTXT = true # Suggested, enable robots.txt file
+googleAnalytics = "" # Optional, add tracking Id for analytics
+disqusShortname = "" # Optional, add Disqus shortname for comments
+SectionPagesMenu = "main" # Enable menu system for lazy bloggers
+footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
+
+[params]
+  description = "" # Suggested, controls default description meta
+  author = "Valentin Brandl" # Optional, controls author name display on posts
+  hide_author = false # Optional, set true to hide author name on posts
+  show_menu = true # Optional, set true to enable section menu
+  powered_by = true # Optional, set false to disable credits
+  images = [] # Suggested, adds default OpenGraph images
+
+[blackfriday]
+  hrefTargetBlank = true # open external links in a new tab
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    weight = 1
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Post"
+    weight = 2
+    identifier = "post"
+    url = "/post/"
