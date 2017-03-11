@@ -1,12 +1,14 @@
 +++
 date = "2017-03-11T11:23:43+01:00"
+publishdate = "2017-03-11T11:23:43+01:00"
 title = "About"
-description = "about me"
+description = "Information about myself"
 menu = "main"
 
 +++
 
-## About Me
+About Me
+=
 I'm Valentin, an computer science student from Regensburg, Germany. Currently I'm studying at [OTH Regensburg](https://www.oth-regensburg.de/).
 
 My interests are mainly in IT security and open source software but also practical cryptography and blockchain based technologies. I also like administrating Linux machines and planing network infrastructures.
@@ -16,7 +18,8 @@ I'm coding since ~2010.
 
 Currently working at [EBSnet](http://ebsnet.de/).
 
-## Skills
+Skills
+=
  * Linux
  * Java SE and EE
  * C
@@ -26,7 +29,8 @@ Currently working at [EBSnet](http://ebsnet.de/).
  * MySQL
  * Oracle SQL
 
-## System/Tools
+System/Tools
+=
  * OS: [Arch Linux](https://archlinux.org)
  * WM: [i3wm](https://i3wm.org/)
  * Editor: [Vim](http://www.vim.org)
@@ -34,5 +38,6 @@ Currently working at [EBSnet](http://ebsnet.de/).
 
 Also refer to my [dotfiles](https://github.com/vbrandl/dotfiles)
 
-## GitHub
+GitHub
+=
 Visit [my GitHub profile](https://github.com/vbrandl).

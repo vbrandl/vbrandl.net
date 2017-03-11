@@ -1,7 +1,8 @@
 +++
 date = "2017-03-11T11:38:41+01:00"
+publishdate = "2017-03-11T11:38:41+01:00"
 title = "Contact"
-description = ""
+description = "My contact information"
 menu = "main"
 
 +++
