@@ -9,14 +9,14 @@ menu = "main"
 
 About Me
 =
-I'm Valentin, an computer science student from Regensburg, Germany. Currently I'm studying at [OTH Regensburg](https://www.oth-regensburg.de/).
+I'm Valentin, an computer science student from Regensburg, Germany. Currently I'm studying at [OTH Regensburg][1].
 
 My interests are mainly in IT security and open source software but also practical cryptography and blockchain based technologies. I also like administrating Linux machines and planing network infrastructures.
 In my free time I like to play around with binary analysis and exploiting techniques by solving wargames.
 
 I'm coding since ~2010.
 
-Currently working at [EBSnet](http://ebsnet.de/).
+Currently working at [EBSnet][2].
 
 Skills
 =
@@ -31,13 +31,25 @@ Skills
 
 System/Tools
 =
- * OS: [Arch Linux](https://archlinux.org)
- * WM: [i3wm](https://i3wm.org/)
- * Editor: [Vim](http://www.vim.org)
- * Shell: [Zsh](https://www.zsh.org/) with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [antigen](http://antigen.sharats.me/) in [tmux](https://tmux.github.io/)
+ * OS: [Arch Linux][3]
+ * WM: [i3wm][4]
+ * Editor: [Vim][5]
+ * Shell: [Zsh][6] with [oh-my-zsh][7] and [antigen][8] in [tmux][9]
 
-Also refer to my [dotfiles](https://github.com/vbrandl/dotfiles)
+Also refer to my [dotfiles][10]
 
 GitHub
 =
-Visit [my GitHub profile](https://github.com/vbrandl).
+Visit [my GitHub profile][11].
+
+[1]: https://www.oth-regensburg.de/
+[2]: http://ebsnet.de/
+[3]: https://archlinux.org
+[4]: https://i3wm.org/
+[5]: http://www.vim.org
+[6]: https://www.zsh.org/
+[7]: https://github.com/robbyrussell/oh-my-zsh
+[8]: http://antigen.sharats.me/
+[9]: https://tmux.github.io/
+[10]: https://github.com/vbrandl/dotfiles
+[11]: https://github.com/vbrandl
