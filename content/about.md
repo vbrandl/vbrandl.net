@@ -44,7 +44,7 @@ Visit [my GitHub profile][11].
 
 ## License
 
-Every page on this website is released unter the [CC-BY-SA-4.0][12] license.
+If not stated otherwise, every page on this website is released unter the [CC-BY-SA-4.0][12] license.
 
 [1]: https://www.oth-regensburg.de/
 [2]: http://ebsnet.de/
