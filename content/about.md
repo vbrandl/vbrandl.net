@@ -7,9 +7,9 @@ menu = "main"
 
 +++
 
-About Me
-=
-I'm Valentin, an computer science student from Regensburg, Germany. Currently I'm studying at [OTH Regensburg][1].
+## About Me
+
+I'm Valentin, a computer science student from Regensburg, Germany. Currently I'm studying at [OTH Regensburg][1].
 
 My interests are mainly in IT security and open source software but also practical cryptography and blockchain based technologies. I also like administrating Linux machines and planing network infrastructures.
 In my free time I like to play around with binary analysis and exploiting techniques by solving wargames.
@@ -18,19 +18,19 @@ I'm coding since ~2010.
 
 Currently working at [EBSnet][2].
 
-Skills
-=
+## Skills
+
  * Linux
- * Java SE and EE
+ * Java EE and SE
  * C
  * Perl 5
- * Little Rust and Python
+ * Getting better in Rust and little Python
  * Bash
  * MySQL
  * Oracle SQL
 
-System/Tools
-=
+## System/Tools
+
  * OS: [Arch Linux][3]
  * WM: [i3wm][4]
  * Editor: [Vim][5]
@@ -38,8 +38,8 @@ System/Tools
 
 Also refer to my [dotfiles][10]
 
-GitHub
-=
+## GitHub
+
 Visit [my GitHub profile][11].
 
 [1]: https://www.oth-regensburg.de/
