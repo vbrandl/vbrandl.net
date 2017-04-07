@@ -3,7 +3,7 @@ date = "2017-04-07T14:05:00+02:00"
 publishdate = "2017-04-07T14:05:00+02:00"
 title = "A Rusty Weekend"
 categories = ["programming", "rust"]
-draft = true
+draft = false
 description = "My first steps with the Rust programming language"
 tags = ["rust","skeleton"]
 
