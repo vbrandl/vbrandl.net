@@ -1,0 +1,25 @@
+{{ define "title" -}}
+  {{ .Params.name }} | {{ .Site.Title }}
+{{- end }}
+{{ define "header" }}
+  {{ partial "menu" . }}
+{{ end }}
+{{ define "main" }}
+  <header>
+    <h1>{{ .Title }}</h1>
+  </header>
+{{ range (where .Site.RegularPages "Section" "post").GroupByDate "2006" }}
+  <h2>{{ .Key }}</h2>
+  <ul>
+   {{ range .Pages }}
+      <li>
+        <span>{{ .Date.Format "02 Jan" }}</span>
+        <a href="{{ .Permalink }}" id="{{ .UniqueID }}" alt="{{ .Title }}">{{ .Title | markdownify }}</a>
+      </li>
+   {{ end }}
+  </ul>
+{{ end }}
+{{ end }}
+{{ define "footer" }}
+  {{ partial "powered-by" . }}
+{{ end }}

@@ -1,0 +1,4 @@
+<p class="muted">
+  <a href="/archives/#{{ .UniqueID }}">Published</a> {{ with .Params.categories }}in <span itemprop="articleSection">{{ delimit (apply (apply (sort .) "partial" "post/category-link" ".") "chomp" ".") ", " " and "}}</span>
+  {{ end }}{{ with .Params.tags }} and tagged {{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " " and " }}{{ end }}. This entry has <span itemprop="wordCount">{{ .WordCount }}</span> words. If you want to discuss it with me, send me a <a href="https://twitter.com/intent/tweet?text=@daiweico, about '{{ .Title }}'" target="_blank" title="Tweet me about '{{ .Title }}'">tweet</a>!
+</p>
