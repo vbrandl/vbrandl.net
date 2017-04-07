@@ -42,6 +42,10 @@ Also refer to my [dotfiles][10]
 
 Visit [my GitHub profile][11].
 
+## License
+
+Every page on this website is released unter the [CC-BY-SA-4.0][12] license.
+
 [1]: https://www.oth-regensburg.de/
 [2]: http://ebsnet.de/
 [3]: https://archlinux.org
@@ -53,3 +57,4 @@ Visit [my GitHub profile][11].
 [9]: https://tmux.github.io/
 [10]: https://github.com/vbrandl/dotfiles
 [11]: https://github.com/vbrandl
+[12]: https://github.com/vbrandl/vbrandl.net/blob/master/LICENSE
