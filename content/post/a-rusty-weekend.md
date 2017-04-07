@@ -15,7 +15,7 @@ Almost C like performance without memory corruption vulnerabilities, no race con
 and no garbage collector or any other kind of runtime overhead made that language sound really awesome.
 
 In Rust all safety checks are done in compile time. The compiler translates into the [LLVM][1] meta language which then takes care 
-of the optimization and compilation into machine code for the target architecture. Rust libraries provide a [FFI][2] 
+of the optimization and compilation into machine code for the target architecture. Rust libraries provide an [FFI][2] 
 so they can be used from almost every other language. Due to it's safety features and the lack of performance overhead, Rust also aims to be a system programming language and there are 
 some really awesome projects, e.g. the [Redox operating system][3] which implements a microkernel architecture and has some really great design ideas (have a look at it!).
 Also Mozilla started implementing a new, parallel browser engine called [Servo][4] which is more than 3 times faster than Gecko, the current engine used in Firefox[^servo]. 
