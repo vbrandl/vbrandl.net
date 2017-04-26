@@ -20,4 +20,3 @@ tags
 
 # End of https://www.gitignore.io/api/vim,hugo
 deploy.sh
-hugo_0.19_linux_amd64
