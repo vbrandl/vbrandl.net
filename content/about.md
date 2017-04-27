@@ -42,6 +42,12 @@ Also refer to my [dotfiles][10]
 
 Visit [my GitHub profile][11].
 
+## Services
+
+I'm running a [SKS keyserver][13] on this server: [keyserver.vbrandl.net][14].
+
+The [website][15] and [keyserver][16] are also available via Tor onion services.
+
 ## License
 
 If not stated otherwise, every page on this website is released unter the [CC-BY-SA-4.0][12] license.
@@ -58,3 +64,7 @@ If not stated otherwise, every page on this website is released unter the [CC-BY
 [10]: https://github.com/vbrandl/dotfiles
 [11]: https://github.com/vbrandl
 [12]: https://github.com/vbrandl/vbrandl.net/blob/master/LICENSE
+[13]: https://sks-keyservers.net/
+[14]: https://keyserver.vbrandl.net/
+[15]: http://womux7pjybmp6i5q.onion/
+[16]: http://yevybz7bh2ge5pct.onion/
