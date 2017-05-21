@@ -24,7 +24,7 @@ Currently working at [EBSnet][2].
  * Java EE and SE
  * C
  * Perl 5
- * Getting better in Rust and little Python
+ * A bit Rust and Python
  * Bash
  * MySQL
  * Oracle SQL
