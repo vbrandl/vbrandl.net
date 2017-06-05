@@ -13,8 +13,7 @@ rsync -aqz ${PUBLIC_WWW}/ $BACKUP_WWW
 trap "echo 'A problem occurred.  Reverting to backup.'; rsync -aqz --del $BACKUP_WWW/ $PUBLIC_WWW; rm -rf $WORKING_DIRECTORY" EXIT
 
 git clone $GIT_REPO $WORKING_DIRECTORY
-cd $WORKING_DIRECTORY
-git submodule update --init --recursive --remote
+cd $WORKING_DIRECTORY && git submodule update --init --recursive --remote
 rm -rf $PUBLIC_WWW/*
 hugo -s $WORKING_DIRECTORY -d ${PUBLIC_WWW} -b "https://${MY_DOMAIN}"
 find $PUBLIC_WWW -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \; -exec touch -r {} "{}.gz" \;
