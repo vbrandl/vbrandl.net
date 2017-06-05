@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# post-receive hook for automated deployment
 
 GIT_REPO=$HOME/vbrandl.git
 WORKING_DIRECTORY=$HOME/vbrandl-working
