@@ -44,7 +44,7 @@ Visit [my GitHub profile][11].
 
 ## Services
 
-I'm running a [SKS keyserver][13] on this server: [keyserver.vbrandl.net][14].
+I'm administrating a [SKS keyserver][13] on this server: [keyserver.vbrandl.net][14].
 
 The [website][15] and [keyserver][16] are also available via Tor onion services.
 
