@@ -6,4 +6,4 @@ HUGO_BIN="hugo"
 ${HUGO_BIN}
 
 # ahead of time compression and timestamp fixing
-find public/ -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \; -exec touch -r {} "{}.gz" \;
+find public/ -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best "{}" \; -exec touch -r "{}" "{}.gz" \;
