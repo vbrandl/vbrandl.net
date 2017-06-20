@@ -9,7 +9,7 @@ menu = "main"
 
 You can contact me on different mediums:
 
- * Mail: <hi@vbrandl.net> (Please consider using my [GPG key][0]. You can also write a mail to every alias found in the GPG key)
+ * Mail: <a href="mailto:%68&#105;&#064;&#x76;&#098;&#114;&#097;&#110;&#100;&#108;&#046;&#110;&#101;&#116;">&#104;&#105;&#064;&#118;&#098;&#114;&#097;&#110;&#100;&#108;&#046;&#110;&#101;&#116;</a> (Please consider using my [GPG key][0]. You can also write a mail to every alias found in the GPG key)
  * [Matrix][1]: @vbrandl:matrix.vsund.de
 
 
