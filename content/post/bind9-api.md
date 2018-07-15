@@ -2,10 +2,10 @@
 date = "2018-07-15T21:45:00+02:00"
 publishdate = "2018-07-15T21:45:00+02:00"
 title = "BIND9 API"
-description = ""
+description = "Building an API for the BIND9 DNS server to solve ACME DNS challenges"
 draft = true
-categories = ["rust", "letsencrypt", "dns"]
-tags = ["rust", "actix-web"]
+categories = ["rust", "programming"]
+tags = ["rust", "actix-web", "letsencrypt", "dns"]
 
 +++
 
