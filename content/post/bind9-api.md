@@ -9,15 +9,15 @@ tags = ["rust", "actix-web"]
 
 +++
 
-I manage most of my domains using my own nameservers, running BIND9 on
-two Debian VPS located in Italy (master) and France (slave). Until
-now, I've been changing the DNS records by SSHing into the machine and
-editing the zonefile by hand. This worked fine since I rarely needed
-to change any DNS records. Then earlier this year, [LetsEncrypt][0]
-put the ACME v2 endpoint into production which allows users to obtain
-wildcard certificates using the DNS challenge. This put me into a
-situation where I needed to create, update and delete DNS records
-automatically.
+I manage most of my domains using my own nameservers, running
+[BIND9][18] on two Debian VPS located in Italy (master) and France
+(slave). Until now, I've been changing the DNS records by SSHing into
+the machine and editing the zonefile by hand. This worked fine since I
+rarely needed to change any DNS records. Then earlier this year,
+[LetsEncrypt][0] put the ACME v2 endpoint into production which allows
+users to obtain wildcard certificates using the DNS challenge. This
+put me into a situation where I needed to create, update and delete
+DNS records automatically.
 
 <!-- more -->
 
@@ -142,7 +142,7 @@ secret = "topsecret"
 
 The final binaries, I use in production are compiled using the
 [`ekidd/rust-musl-builder` Docker image][16] to build completely
-static binaries by linking against the [musl libc][17]. (Linking
+static binaries by linking against the [musl libc][17] (Linking
 against the default glibc target, produces dynamically linked binaries
 that depend to the systems glibc and OpenSSL version).
 
@@ -181,5 +181,6 @@ pose any problems either.
 [15]: https://oldsql.cc
 [16]: https://hub.docker.com/r/ekidd/rust-musl-builder/
 [17]: https://www.musl-libc.org/
+[18]: https://www.isc.org/downloads/bind/
 
 [^actix-performance]: https://www.techempower.com/benchmarks/#section=data-r16&hw=ph&test=plaintext
