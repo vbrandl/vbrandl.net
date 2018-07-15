@@ -70,9 +70,9 @@ API but this still does not protect against replay attacks. If an
 attacker managed to intercept an request to the API, (s)he would be
 able to resend the same request to the server and re-execute the
 command. To prevent this, the API server has to be placed behind a
-reverse proxy like [nginx][11] to encrypt the requests using TLS or as I am
-doing it, make the server listen on a private IP address inside an
-encrypted VLAN ([tinc][1] in my case).
+reverse proxy like [nginx][11] to encrypt the requests using TLS or as
+I am doing it, make the server listen on a private IP address inside
+an encrypted VLAN ([tinc][1] in my case).
 
 Once the body was verified using the pre-shared secret `nsupdate` is
 invoked and the following update or delete scripts are passed via
