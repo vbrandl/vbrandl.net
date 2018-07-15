@@ -14,15 +14,15 @@ I manage most of my domains using my own nameservers, running
 (slave). Until now, I've been changing the DNS records by SSHing into
 the machine and editing the zonefile by hand. This worked fine since I
 rarely needed to change any DNS records. Then earlier this year,
-[LetsEncrypt][0] put the ACME v2 endpoint into production which allows
+[Let's Encrypt][0] put the ACME v2 endpoint into production which allows
 users to obtain wildcard certificates using the DNS challenge. This
 put me into a situation where I needed to create, update and delete
 DNS records automatically.
 
 <!-- more -->
 
-The LetsEncrypt HTTP challenge requires the user to make the challenge
-flag available via HTTP under
+The ACME HTTP challenge requires the user to make the challenge flag
+available via HTTP under
 `http://www.example.com/.well-known/acme-challenge`. This way, the
 ACME endpoint can only verify ownership over a specific subdomain
 (`www.example.com` in this case). The DNS challenge looks for the flag
