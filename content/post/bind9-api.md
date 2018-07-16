@@ -1,5 +1,5 @@
 +++
-date = "2018-07-15T22:45:00+02:00"
+date = "2018-07-14T11:13:00+02:00"
 publishdate = "2018-07-15T22:45:00+02:00"
 title = "BIND9 API"
 description = "Building an API for the BIND9 DNS server to solve ACME DNS challenges"
@@ -12,12 +12,12 @@ tags = ["rust", "actix-web", "letsencrypt", "dns"]
 I manage most of my domains using my own nameservers, running
 [BIND9][18] on two Debian VPS located in Italy (master) and France
 (slave). Until now, I've been changing the DNS records by SSHing into
-the machine and editing the zonefile by hand. This worked fine since I
-rarely needed to change any DNS records. Then earlier this year,
-[Let's Encrypt][0] put the ACME v2 endpoint into production which allows
-users to obtain wildcard certificates using the DNS challenge. This
-put me into a situation where I needed to create, update and delete
-DNS records automatically.
+the machine and editing the zone file by hand. This worked fine since
+I rarely needed to change any DNS records. Then earlier this year,
+[Let's Encrypt][0] put the ACME v2 endpoint into production which
+allows users to obtain wildcard certificates using the DNS challenge.
+This put me into a situation where I needed to create, update and
+delete DNS records automatically.
 
 <!-- more -->
 
@@ -74,7 +74,7 @@ reverse proxy like [nginx][11] to encrypt the requests using TLS or as
 I am doing it, make the server listen on a private IP address inside
 an encrypted VLAN ([tinc][1] in my case).
 
-Once the body was verified using the pre-shared secret `nsupdate` is
+Once the body was verified using the pre-shared secret, `nsupdate` is
 invoked and the following update or delete scripts are passed via
 stdin:
 
@@ -140,7 +140,7 @@ host = "http://127.0.0.1:8080"
 secret = "topsecret"
 ```
 
-The final binaries, I use in production are compiled using the
+The final binaries, I use in production, are compiled using the
 [`ekidd/rust-musl-builder` Docker image][16] to build completely
 static binaries by linking against the [musl libc][17] (Linking
 against the default glibc target, produces dynamically linked binaries
