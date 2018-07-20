@@ -8,7 +8,7 @@ pipeline:
     url: https://staging.vbrandl.net
   compress:
     image: alpine:latest
-    script:
+    commands:
       - apk --no-cache update
       - apk add make
       - make -C public/ -f Makefile
