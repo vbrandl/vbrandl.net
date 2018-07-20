@@ -20,3 +20,26 @@ pipeline:
     user: hugo
     secrets: [ rsync_key ]
 branches: develop
+
+pipeline:
+  build:
+    image: cbrgm/drone-hugo:latest
+    buildDrafts: false
+    buildFuture: false
+    buildExpired: false
+    validate: true
+    url: https://www.vbrandl.net
+  compress:
+    image: alpine:latest
+    commands:
+      - apk --no-cache update
+      - apk add make
+      - make -C public/ -f ../Makefile
+  deploy:
+    image: drillster/drone-rsync
+    hosts: [ "vbrandl.net" ]
+    target: /var/www/vbrandl.net
+    source: public/*
+    user: hugo
+    secrets: [ rsync_key ]
+branches: master
