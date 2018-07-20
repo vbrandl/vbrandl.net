@@ -10,7 +10,7 @@ pipeline:
     image: drillster/drone-rsync
     hosts: [ "vbrandl.net" ]
     target: /var/www/staging.vbrandl.net
-    source: public/drone-generated/*
+    source: public/*
     user: hugo
     secrets: [ rsync_key ]
 branches: develop
