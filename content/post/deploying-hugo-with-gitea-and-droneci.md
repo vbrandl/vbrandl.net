@@ -1,6 +1,6 @@
 +++
-date = "2018-07-20T13:30:00+02:00"
-publishdate = "2018-07-20T13:30:00+02:00"
+date = "2018-07-20T16:15:00+02:00"
+publishdate = "2018-07-20T16:15:00+02:00"
 title = "Deploying a Hugo website using Gitea and DroneCI"
 description = "Building a continuous delivery pipeline for static websites generated with Hugo"
 draft = true
