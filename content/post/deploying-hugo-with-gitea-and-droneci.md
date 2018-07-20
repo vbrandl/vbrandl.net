@@ -6,6 +6,7 @@ description = "Building a continuous delivery pipeline for static websites gener
 draft = true
 categories = ["Continuous Delivery", "Hugo"]
 tags = ["Hugo", "DevOps", "Gitea", "DroneCI"]
+toc = true
 
 +++
 
@@ -13,22 +14,73 @@ This blog is created using the [Hugo][0] static site generator. I used
 to deploy new posts using a bare git repository on the target server
 and a `post-receive` hook to build the posts and copy them to the
 public web server directory. I followed [this tutorial][1] by Digital
-Ocean. This worked well enough but, to deploy the blog, I always needed
-to push to a separate git remote. Also I had to set up SSH access to
-the server and the new git remote if I wanted to write posts on
-another machine.
+Ocean. This worked well enough but, to deploy the blog, I always
+needed to push to a separate git remote. Also I had to set up SSH
+access to the server and the new git remote if I wanted to write posts
+on another machine. I decided, a better setup was needed.
 
 <!-- more -->
+
+## Goal
+
+The goal of the new pipeline should be to automatically build and
+deploy the blog when commit is made to the repository:
+
+```
++-------------------+    +------------+    +------------------+
+| Git commit & push | -> | Hugo build | -> | Deploy to server |
++-------------------+    +------------+    +------------------+
+```
+
+## Setup
 
 A few weeks ago, I setup [DroneCI][2] aside my [Gitea][3] instance.
 There is a [great plugin for DroneCI][4] to build Hugo websites.
 Deploying the generated pages can be done using the [SCP][5] or
 [rsync][6] plugins. I decided to use rsync since it would be able to
 execute a custom script after copying the files over to the target
-machine (which I'm not making use of). To take the load of compressing
-requested files from my web server, I use the [`gzip_static`
-module][7] of nginx. The compression is done using the following
-`Makefile`:
+machine (which might come in handy in the future).
+
+Drone build pipelines are made up of several steps, where the changes
+made on the repository in each step are persisted to the next step. So
+when the first step (actually it is the second step since the first is
+cloning the repository but this is an implicit step) builds the Hugo
+website, the build output in the `public/` directory will still exist
+in the following step, so I can use the created files and copy them to
+the target server in the second step. At this point my DroneCI
+configuration looked like this:
+
+```yaml
+pipeline:
+  build:
+    image: cbrgm/drone-hugo:latest
+    validate: true
+    url: https://www.vbrandl.net
+
+  deploy:
+    image: drillster/drone-rsync
+    hosts: [ "vbrandl.net" ]
+    target: /var/www/vbrandl.net
+    source: public/*
+    user: hugo
+    secrets: [ rsync_key ]
+```
+
+The SSH key for the user `hugo` on the target server was added as a
+secret to the repository so I was able to use rsync.
+
+Due to Drones modular approach for build pipelines, it is trivial to
+deploy the blog to other targets. There are plugins to deploy to [AWS
+S3][11], use [FTP(S)][12] for uploading and many others. Only the
+`deploy` step in the pipeline need to be replaced.
+
+## Improving the Pipeline
+
+### Ahead-of-Time Compression
+
+To take the load of compressing requested files from my web server, I
+use the [`gzip_static` module][7] of nginx. The compression is done
+using the following `Makefile`:
 
 ```Makefile
 .PHONY: default clean
@@ -61,15 +113,6 @@ compress the file on the fly. I implemented another step in my build
 pipeline between the build and the deploy step, that uses the [Alpine
 Linux base image][8], installs `make` and executes the `Makefile`.
 
-Drone build pipelines are made up of several steps, where the changes
-made on the repository in each step are persisted to the next step. So
-when the first step (actually it is the second step since the first is
-cloning the repository but this is an implicit step) builds the Hugo
-website, the `public/` directory will still exist in the new step, so
-I can perform the AoT compression and copy all files to the target
-server in the third step. At this point my DroneCI configuration
-looked like this:
-
 ```yaml
 pipeline:
   build:
@@ -93,8 +136,7 @@ pipeline:
     secrets: [ rsync_key ]
 ```
 
-The SSH key for the user `hugo` on the target server was added as a
-secret to the repository so I was able to use rsync.
+### Multiple Environments
 
 At this point I thought it would be fun to implement a staging area
 for the blog to test unreleased drafts and get feedback on them,
@@ -161,10 +203,14 @@ Now my blog is automatically deployed once I merge new posts into the
 blog might be considered to be overkill, it was pretty fun to
 implement a proper deployment pipeline.
 
-Due to Drones modular approach for build pipelines, it is trivial to
-deploy the blog to other targets. There are plugins to deploy to [AWS
-S3][11], use [FTP(S)][12] for uploading and many others. Only the
-	according `deploy-*` steps in the pipeline need to be replaced.
+The final pipeline looks like this:
+
+```
++----------+   +-----------------+   +----------------+   +----------------+
+| Git push | > | Hugo build $ENV | > | Compress files | > | Deploy to $ENV |
++----------+   +-----------------+   +----------------+   +----------------+
+```
+
 
 [0]: https://gohugo.io/
 [1]: https://www.digitalocean.com/community/tutorials/how-to-deploy-a-hugo-site-to-production-with-git-hooks-on-ubuntu-14-04
