@@ -11,7 +11,7 @@ pipeline:
     commands:
       - apk --no-cache update
       - apk add make
-      - make -C public/ -f Makefile
+      - make -C public/ -f ../Makefile
   deploy:
     image: drillster/drone-rsync
     hosts: [ "vbrandl.net" ]
