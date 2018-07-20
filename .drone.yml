@@ -1,0 +1,9 @@
+pipeline:
+  branches: develop
+  hugo:
+    image: cbrgm/drone-hugo:latest
+    buildDrafts: true
+    buildFuture: true
+    buildExpired: true
+    validate: true
+    url: https://staging.vbrandl.net
