@@ -72,7 +72,7 @@ secret to the repository so I was able to use rsync.
 Due to Drones modular approach for build pipelines, it is trivial to
 deploy the blog to other targets. There are plugins to deploy to [AWS
 S3][11], use [FTP(S)][12] for uploading and many others. Only the
-`deploy` step in the pipeline need to be replaced.
+`deploy` step in the pipeline needs to be replaced.
 
 ## Improving the Pipeline
 
