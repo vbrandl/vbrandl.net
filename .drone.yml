@@ -1,45 +1,47 @@
 pipeline:
-  build:
+  build-dev:
     image: cbrgm/drone-hugo:latest
     buildDrafts: true
     buildFuture: true
     buildExpired: true
     validate: true
     url: https://staging.vbrandl.net
-  compress:
-    image: alpine:latest
-    commands:
-      - apk --no-cache update
-      - apk add make
-      - make -C public/ -f ../Makefile
-  deploy:
-    image: drillster/drone-rsync
-    hosts: [ "vbrandl.net" ]
-    target: /var/www/staging.vbrandl.net
-    source: public/*
-    user: hugo
-    secrets: [ rsync_key ]
-branches: develop
+    when:
+      branch: develop
 
-pipeline:
-  build:
+  build-prod:
     image: cbrgm/drone-hugo:latest
     buildDrafts: false
     buildFuture: false
     buildExpired: false
     validate: true
     url: https://www.vbrandl.net
+    when:
+      branch: master
+
   compress:
     image: alpine:latest
     commands:
       - apk --no-cache update
       - apk add make
       - make -C public/ -f ../Makefile
-  deploy:
+
+  deploy-dev:
+    image: drillster/drone-rsync
+    hosts: [ "vbrandl.net" ]
+    target: /var/www/staging.vbrandl.net
+    source: public/*
+    user: hugo
+    secrets: [ rsync_key ]
+    when:
+      branch: develop
+
+  deploy-prod:
     image: drillster/drone-rsync
     hosts: [ "vbrandl.net" ]
     target: /var/www/vbrandl.net
     source: public/*
     user: hugo
     secrets: [ rsync_key ]
-branches: master
+    when:
+      branch: master
