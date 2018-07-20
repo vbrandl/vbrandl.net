@@ -6,6 +6,12 @@ pipeline:
     buildExpired: true
     validate: true
     url: https://staging.vbrandl.net
+  compress:
+    image: alpine:latest
+    script:
+      - apk --no-cache update
+      - apk add make
+      - make -C public/ -f Makefile
   deploy:
     image: drillster/drone-rsync
     hosts: [ "vbrandl.net" ]
