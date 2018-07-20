@@ -1,9 +1,16 @@
 pipeline:
-  hugo:
+  build:
     image: cbrgm/drone-hugo:latest
     buildDrafts: true
     buildFuture: true
     buildExpired: true
     validate: true
     url: https://staging.vbrandl.net
+  deploy:
+    image: drillster/drone-rsync
+    hosts: [ "vbrandl.net" ]
+    target: /var/www/staging.vbrandl.net
+    source: public/drone-generated/*
+    user: hugo
+    secrets: [ rsync_key ]
 branches: develop
