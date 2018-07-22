@@ -59,7 +59,8 @@ On [mirror.oldsql.cc][17] I'm hosting various mirrors:
  * [Tails][22]
  * [PoC||GTFO ezine][23] (Generated using [this mirror creation tool][24])
 
-The [website][15] and [keyserver][16] are also available via Tor onion services.
+The [website][15], [keyserver][16] and [mirrors][25] are also available via Tor
+onion services.
 
 ## License
 
@@ -90,3 +91,4 @@ If not stated otherwise, every page on this website is released unter the
 [22]: https://mirror.oldsql.cc/tails/
 [23]: https://mirror.oldsql.cc/pocorgtfo/
 [24]: https://github.com/vbrandl/pocorgtfo-mirror/
+[25]: http://oldsqlid5444gjnhxeio2esjnatksjrfcyhec2dbqa3ur3hazlsj4xqd.onion/
