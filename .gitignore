@@ -20,3 +20,16 @@ tags
 
 # End of https://www.gitignore.io/api/vim,hugo
 deploy.sh
+
+# Created by https://www.gitignore.io/api/hugo
+
+### Hugo ###
+# Hugo binary
+hugo*
+
+# Generated files at default location
+/public/
+/resources/_gen
+
+
+# End of https://www.gitignore.io/api/hugo
