@@ -1,23 +1,23 @@
 pipeline:
-  # restore-cache-dev:
-  #   image: drillster/drone-volume-cache
-  #   restore: true
-  #   mount:
-  #     - public
-  #   volumes:
-  #     - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
-  #   when:
-  #     branch: develop
+  restore-cache-dev:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - public
+    volumes:
+      - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
+    when:
+      branch: develop
 
-  # restore-cache-prod:
-  #   image: drillster/drone-volume-cache
-  #   restore: true
-  #   mount:
-  #     - public
-  #   volumes:
-  #     - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
-  #   when:
-  #     branch: master
+  restore-cache-prod:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - public
+    volumes:
+      - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
+    when:
+      branch: master
 
   build-dev:
     image: cbrgm/drone-hugo:latest
@@ -66,22 +66,22 @@ pipeline:
     when:
       branch: master
 
-  # rebuild-cache-dev:
-  #   image: drillster/drone-volume-cache
-  #   rebuild: true
-  #   mount:
-  #     - public
-  #   volumes:
-  #     - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
-  #   when:
-  #     branch: develop
+  rebuild-cache-dev:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - public
+    volumes:
+      - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
+    when:
+      branch: develop
 
-  # rebuild-cache-prod:
-  #   image: drillster/drone-volume-cache
-  #   rebuild: true
-  #   mount:
-  #     - public
-  #   volumes:
-  #     - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
-  #   when:
-  #     branch: master
+  rebuild-cache-prod:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - public
+    volumes:
+      - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
+    when:
+      branch: master
