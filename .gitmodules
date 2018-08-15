@@ -1,4 +1,0 @@
-[submodule "themes/after-dark"]
-	path = themes/after-dark
-	url = https://git.habd.as/comfusion/after-dark.git
-	branch = master
