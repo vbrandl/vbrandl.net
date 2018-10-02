@@ -31,10 +31,11 @@ pipeline:
       branch: develop
 
   build-prod:
-    image: local/drone-hugo:latest
+    image: plugins/hugo:latest
     buildDrafts: false
     buildFuture: false
     buildExpired: false
+    hugoVersion: "0.49"
     validate: true
     url: https://www.vbrandl.net
     when:
