@@ -13,6 +13,8 @@ I'm Valentin, a computer science student from Regensburg, Germany.  I received
 my bachelor's degree after graduating from [OTH Regensburg][1] in 2018 and am
 currently attending [Ruhr Universität Bochum][26] for my master's degree.
 
+[Test external link](https://example.com)
+
 My interests are mainly in IT security and open source software but also
 practical cryptography and blockchain based technologies.  I also like
 administrating Linux machines and planing network infrastructures.  In my free
