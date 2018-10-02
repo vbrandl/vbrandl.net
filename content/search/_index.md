@@ -7,7 +7,4 @@ noindex = true # tell robots not to index
 [form.input]
   placeholder = "Enter search query…"
   disabled = false
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "RSS", "JSON"]
 +++

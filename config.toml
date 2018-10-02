@@ -33,3 +33,6 @@ footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
     weight = 2
     identifier = "post"
     url = "/post/"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON"]
