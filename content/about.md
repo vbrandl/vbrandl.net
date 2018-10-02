@@ -1,5 +1,5 @@
 +++
-date = "2018-07-16T12:00:00+02:00"
+date = "2018-10-02T17:00:00+02:00"
 publishdate = "2017-03-11T11:23:43+01:00"
 title = "About"
 description = "Information about myself"
@@ -9,11 +9,12 @@ menu = "main"
 
 ## About Me
 
-I'm Valentin, a computer science student from Regensburg, Germany. Currently I'm
-studying at [OTH Regensburg][1].
+I'm Valentin, a computer science student from Regensburg, Germany.  I acquired
+my bachelor's degree at [OTH Regensburg][1] in 2018 and am currently working on
+my master's degree at [Ruhr Universität Bochum][26].
 
 My interests are mainly in IT security and open source software but also
-practical cryptography and blockchain based technologies. I also like
+practical cryptography and blockchain based technologies.  I also like
 administrating Linux machines and planing network infrastructures.  In my free
 time I like to play around with binary analysis and exploiting techniques by
 solving wargames.
@@ -92,3 +93,4 @@ If not stated otherwise, every page on this website is released unter the
 [23]: https://mirror.oldsql.cc/pocorgtfo/
 [24]: https://github.com/vbrandl/pocorgtfo-mirror/
 [25]: http://oldsqlid5444gjnhxeio2esjnatksjrfcyhec2dbqa3ur3hazlsj4xqd.onion/
+[26]: https://www.ruhr-uni-bochum.de/
