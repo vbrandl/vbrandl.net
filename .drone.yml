@@ -20,10 +20,11 @@ pipeline:
       branch: master
 
   build-dev:
-    image: local/drone-hugo:latest
+    image: cbrgm/drone-hugo:latest
     buildDrafts: true
     buildFuture: true
     buildExpired: true
+    hugoVersion: "0.49"
     validate: true
     url: https://staging.vbrandl.net
     when:
