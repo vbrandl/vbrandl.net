@@ -20,7 +20,7 @@ pipeline:
       branch: master
 
   build-dev:
-    image: cbrgm/drone-hugo:latest
+    image: plugins/hugo:latest
     buildDrafts: true
     buildFuture: true
     buildExpired: true
