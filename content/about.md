@@ -9,15 +9,15 @@ menu = "main"
 
 ## About Me
 
-I'm Valentin, a computer science student from Regensburg, Germany.  I acquired
-my bachelor's degree at [OTH Regensburg][1] in 2018 and am currently working on
-my master's degree at [Ruhr Universität Bochum][26].
+I'm Valentin, a computer science student from Regensburg, Germany.  I received
+my bachelor's degree after graduating from [OTH Regensburg][1] in 2018 and am
+currently attending [Ruhr Universität Bochum][26] for my master's degree.
 
 My interests are mainly in IT security and open source software but also
 practical cryptography and blockchain based technologies.  I also like
 administrating Linux machines and planing network infrastructures.  In my free
 time I like to play around with binary analysis and exploiting techniques by
-solving wargames.
+solving CTFs and wargames.
 
 I'm coding since ~2010.
 
