@@ -27,7 +27,7 @@ All posts are written using [Vim][4] with some plugins. My Vim configuration can
 
 
 [1]: https://gohugo.io/
-[2]: https://github.com/comfusion/after-dark
+[2]: https://after-dark.habd.as/
 [3]: https://github.com/vbrandl/vbrandl.net
 [4]: http://www.vim.org
 [5]: https://nginx.org/
