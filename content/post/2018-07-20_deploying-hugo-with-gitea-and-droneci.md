@@ -21,7 +21,7 @@ on another machine. I decided, a better setup was needed.
 
 <!-- more -->
 
-# Goal
+## Goal
 
 The goal of the new pipeline should be to automatically build and
 deploy the blog when commit is made to the repository:
@@ -32,7 +32,7 @@ deploy the blog when commit is made to the repository:
 +-------------------+    +------------+    +------------------+
 ```
 
-# Setup
+## Setup
 
 A few weeks ago, I setup [DroneCI][2] aside my [Gitea][3] instance.
 There is a [great plugin for DroneCI][4] to build Hugo websites.
@@ -74,9 +74,9 @@ deploy the blog to other targets. There are plugins to deploy to [AWS
 S3][11], use [FTP(S)][12] for uploading and many others. Only the
 `deploy` step in the pipeline needs to be replaced.
 
-# Improving the Pipeline
+## Improving the Pipeline
 
-## Ahead-of-Time Compression
+### Ahead-of-Time Compression
 
 To take the load of compressing requested files from my web server, I
 use the [`gzip_static` module][7] of nginx. The compression is done
@@ -136,7 +136,7 @@ pipeline:
     secrets: [ rsync_key ]
 ```
 
-## Multiple Environments
+### Multiple Environments
 
 At this point I thought it would be fun to implement a staging area
 for the blog to test unreleased drafts and get feedback on them,
