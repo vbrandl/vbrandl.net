@@ -3,8 +3,7 @@ WORKDIR /usr/src/build
 COPY ./ ./
 RUN apk --no-cache add --update make
 RUN /bin/drone-hugo && \
-    make -C public/ -f ../Makefile && \
-    ls -lah public
+    make -C public/ -f ../Makefile
   # find ./ -type f \( \
   #   -name "*.html" \
   #   -o -name "*.js" \
@@ -22,6 +21,5 @@ RUN /bin/drone-hugo && \
 # Stage: Run
 
 FROM nginx:alpine
-RUN rm /usr/share/nginx/html/*
 COPY --from=build /usr/src/build/public /usr/share/nginx/html/
 EXPOSE 80
