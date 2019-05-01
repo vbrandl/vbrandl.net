@@ -21,5 +21,6 @@ RUN /bin/drone-hugo && \
 # Stage: Run
 
 FROM nginx:alpine
+RUN rm /usr/share/nginx/html/*
 COPY --from=build /usr/src/build/public /usr/share/nginx/html/
 EXPOSE 80
