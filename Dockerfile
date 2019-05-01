@@ -4,7 +4,7 @@ COPY ./ ./
 RUN apk --no-cache add --update make
 RUN /bin/drone-hugo && \
     make -C public/ -f ../Makefile && \
-    ls -lah
+    ls -lah public
   # find ./ -type f \( \
   #   -name "*.html" \
   #   -o -name "*.js" \
