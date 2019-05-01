@@ -1,89 +1,106 @@
-pipeline:
-  restore-cache-dev:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - public
-    volumes:
-      - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
-    when:
-      branch: develop
+kind: pipeline
+name: build
 
-  restore-cache-prod:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - public
-    volumes:
-      - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
-    when:
-      branch: master
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      repo: vbrandl/vbrandl.net
+      auto_tag: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    ref:
+      - refs/heads/master
+      # - refs/tags/v*
 
-  build-dev:
-    image: plugins/hugo:latest
-    buildDrafts: true
-    buildFuture: true
-    buildExpired: true
-    hugoVersion: "0.49"
-    validate: true
-    url: https://staging.vbrandl.net
-    when:
-      branch: develop
+# pipeline:
+  # restore-cache-dev:
+  #   image: drillster/drone-volume-cache
+  #   restore: true
+  #   mount:
+  #     - public
+  #   volumes:
+  #     - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
+  #   when:
+  #     branch: develop
 
-  build-prod:
-    image: plugins/hugo:latest
-    buildDrafts: false
-    buildFuture: false
-    buildExpired: false
-    hugoVersion: "0.49"
-    validate: true
-    url: https://www.vbrandl.net
-    when:
-      branch: master
+  # restore-cache-prod:
+  #   image: drillster/drone-volume-cache
+  #   restore: true
+  #   mount:
+  #     - public
+  #   volumes:
+  #     - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
+  #   when:
+  #     branch: master
 
-  compress:
-    image: alpine:latest
-    commands:
-      - apk --no-cache update
-      - apk add make
-      - make -C public/ -f ../Makefile
+  # build-dev:
+  #   image: plugins/hugo:latest
+  #   buildDrafts: true
+  #   buildFuture: true
+  #   buildExpired: true
+  #   hugoVersion: "0.49"
+  #   validate: true
+  #   url: https://staging.vbrandl.net
+  #   when:
+  #     branch: develop
 
-  deploy-dev:
-    image: drillster/drone-rsync
-    hosts: [ "vbrandl.net" ]
-    target: /var/www/staging.vbrandl.net
-    source: public/*
-    user: hugo
-    secrets: [ rsync_key ]
-    when:
-      branch: develop
+  # build-prod:
+  #   image: plugins/hugo:latest
+  #   buildDrafts: false
+  #   buildFuture: false
+  #   buildExpired: false
+  #   hugoVersion: "0.49"
+  #   validate: true
+  #   url: https://www.vbrandl.net
+  #   when:
+  #     branch: master
 
-  deploy-prod:
-    image: drillster/drone-rsync
-    hosts: [ "vbrandl.net" ]
-    target: /var/www/vbrandl.net
-    source: public/*
-    user: hugo
-    secrets: [ rsync_key ]
-    when:
-      branch: master
+  # compress:
+  #   image: alpine:latest
+  #   commands:
+  #     - apk --no-cache update
+  #     - apk add make
+  #     - make -C public/ -f ../Makefile
 
-  rebuild-cache-dev:
-    image: drillster/drone-volume-cache
-    rebuild: true
-    mount:
-      - public
-    volumes:
-      - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
-    when:
-      branch: develop
+  # deploy-dev:
+  #   image: drillster/drone-rsync
+  #   hosts: [ "vbrandl.net" ]
+  #   target: /var/www/staging.vbrandl.net
+  #   source: public/*
+  #   user: hugo
+  #   secrets: [ rsync_key ]
+  #   when:
+  #     branch: develop
 
-  rebuild-cache-prod:
-    image: drillster/drone-volume-cache
-    rebuild: true
-    mount:
-      - public
-    volumes:
-      - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
-    when:
-      branch: master
+  # deploy-prod:
+  #   image: drillster/drone-rsync
+  #   hosts: [ "vbrandl.net" ]
+  #   target: /var/www/vbrandl.net
+  #   source: public/*
+  #   user: hugo
+  #   secrets: [ rsync_key ]
+  #   when:
+  #     branch: master
+
+  # rebuild-cache-dev:
+  #   image: drillster/drone-volume-cache
+  #   rebuild: true
+  #   mount:
+  #     - public
+  #   volumes:
+  #     - /home/gitea/gitea/drone_build_cache/staging.vbrandl.net:/cache
+  #   when:
+  #     branch: develop
+
+  # rebuild-cache-prod:
+  #   image: drillster/drone-volume-cache
+  #   rebuild: true
+  #   mount:
+  #     - public
+  #   volumes:
+  #     - /home/gitea/gitea/drone_build_cache/vbrandl.net:/cache
+  #   when:
+  #     branch: master
