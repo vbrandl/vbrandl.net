@@ -6,7 +6,6 @@ steps:
     image: plugins/docker
     settings:
       repo: vbrandl/vbrandl.net
-      auto_tag: true
       username:
         from_secret: docker_username
       password:
