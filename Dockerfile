@@ -1,8 +1,8 @@
-FROM plugins/hugo as build
+FROM klakegg/hugo:0.56.3-alpine as build
 WORKDIR /usr/src/build
 COPY ./ ./
 RUN apk --no-cache add --update make
-RUN /bin/drone-hugo && \
+RUN hugo && \
     make -C public/ -f ../Makefile
   # find ./ -type f \( \
   #   -name "*.html" \
