@@ -1,5 +1,5 @@
 +++
-date = "2018-10-02T17:00:00+02:00"
+date = "2019-08-10T12:00:00+02:00"
 publishdate = "2017-03-11T11:23:43+01:00"
 title = "About"
 description = "Information about myself"
@@ -56,6 +56,7 @@ I'm administrating a [SKS keyserver][13] on this server:
 On [mirror.oldsql.cc][17] I'm hosting various mirrors:
 
  * [Arch Linux][18] ([Pool stats][19])
+ * [Manjaro Linux][27]
  * [Tor Project][20] ([Downloads][21])
  * [Tails][22]
  * [PoC||GTFO ezine][23] (Generated using [this mirror creation tool][24])
@@ -94,3 +95,5 @@ If not stated otherwise, every page on this website is released unter the
 [24]: https://github.com/vbrandl/pocorgtfo-mirror/
 [25]: http://oldsqlid5444gjnhxeio2esjnatksjrfcyhec2dbqa3ur3hazlsj4xqd.onion/
 [26]: https://www.ruhr-uni-bochum.de/
+[27]: https://mirror.oldsql.cc/manjaro/
+
