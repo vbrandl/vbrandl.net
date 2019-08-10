@@ -10,7 +10,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      hugo_version: 0.56
+      hugo_version: 0.56.3
       repo: vbrandl/vbrandl.net
       username:
         from_secret: docker_username
