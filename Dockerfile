@@ -23,5 +23,5 @@ RUN hugo && \
 FROM nginx:alpine
 RUN rm /usr/share/nginx/html/*
 COPY --from=build /usr/src/build/public /usr/share/nginx/html/
-COPY ./.well-known/ /usr/share/nginx/html/
+COPY ./.well-known/ /usr/share/nginx/html/.well-known
 EXPOSE 80
