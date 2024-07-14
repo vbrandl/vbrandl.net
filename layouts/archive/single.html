@@ -14,7 +14,7 @@
    {{ range .Pages }}
       <li>
         <span>{{ .Date.Format "02 Jan" }}</span>
-        <a href="{{ .Permalink }}" id="{{ .File.UniqueID }}" alt="{{ .Title }}">{{ .Title | markdownify }}</a>
+        <a href="{{ .Permalink }}" id="{{ .UniqueID }}" alt="{{ .Title }}">{{ .Title | markdownify }}</a>
       </li>
    {{ end }}
   </ul>

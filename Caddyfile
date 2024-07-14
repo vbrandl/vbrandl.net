@@ -1,6 +1,0 @@
-:80
-
-root * /data
-file_server {
-	precompressed gzip
-}
