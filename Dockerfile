@@ -5,7 +5,7 @@ RUN apk --no-cache add --update make
 RUN hugo && \
     make -C public/ -f ../Makefile
 
-FROM caddy
+FROM caddy:latest
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY ./.well-known/ /data/.well-known
 COPY --from=build /usr/src/build/public /data
